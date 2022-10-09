@@ -1,0 +1,34 @@
+cabal-version:   3.4
+name:            dhall-surgical-freeze
+version:         0.1.0.0
+license:         MIT
+license-file:    LICENSE
+author:          Akshay & Stefan
+maintainer:      no@example.com
+category:        Language
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    hs-source-dirs: src
+    build-depends:      base ^>=4.15.1.0
+                      , dhall
+                      , text
+                      , filepath
+                      , containers
+                      , array
+    default-language: Haskell2010
+    exposed-modules:
+       Freeze.Lib
+
+executable dhall-surgical-freeze
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:    base ^>=4.15.1.0
+                      , dhall-surgical-freeze
+    hs-source-dirs:   app
+    default-language: Haskell2010
